@@ -13,5 +13,7 @@ public class Main {
         ImageIO.write(grayImage, "png", outputFile);
         System.out.println("✅ 흑백 이미지 저장 완료: " + outputFile.getAbsolutePath());
 
+        AsciiConverter.convert();
+        System.out.println("✅ ASCII 아트 출력 완료: ");
     }
 }

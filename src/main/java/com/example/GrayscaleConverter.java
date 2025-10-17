@@ -27,12 +27,11 @@ public class GrayscaleConverter {
         for (int row = 0; row < height; row++) {
             for (int col = 0; col < width; col++) {
                 int rgba =  rgbaArray[row][col];
-                int a = (rgba >> 24) & 0xFF;
                 int r = (rgba >> 16) & 0xFF;
                 int g = (rgba >> 8) & 0xFF;
                 int b = (rgba) & 0xFF;
-                int gray = (int) Math.ceil(0.299*a+0.587*g+0.114*b);
-                grayArray[row][col] = (gray>>24) | (gray<<16) | (gray<<8) | gray;
+                int gray = (int) Math.ceil(0.299*r+0.587*g+0.114*b);
+                grayArray[row][col] = (gray<<24) | (gray<<16) | (gray<<8) | gray;
             }
         }
 
